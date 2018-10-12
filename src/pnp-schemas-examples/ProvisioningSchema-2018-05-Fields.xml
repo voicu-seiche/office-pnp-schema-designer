@@ -1,0 +1,97 @@
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema">
+
+    <pnp:Preferences Author="John Black" Version="1.0" Generator="Human being :-)">
+        <pnp:Parameters>
+            <pnp:Parameter Key="O365TenantName">contoso</pnp:Parameter>
+            <pnp:Parameter Key="CodeProvidedParam" Required="true"/>
+            <pnp:Parameter Key="YammerNetwork">contoso.com</pnp:Parameter>
+            <pnp:Parameter Key="lcid">1033</pnp:Parameter>
+            <pnp:Parameter Key="CompanyName">Contoso Inc.</pnp:Parameter>
+        </pnp:Parameters>
+    </pnp:Preferences>
+
+    <pnp:Templates ID="SAMPLE-TEMPLATES">
+
+        <pnp:ProvisioningTemplate ID="SPECIALTEAM" Version="1.0" BaseSiteTemplate="STS#0" ImagePreviewUrl="https://preview.png" DisplayName="Special Team Site" Description="This is a Special Team Site for custom provisioning" Scope="RootSite" TemplateCultureInfo="1040">
+
+            <pnp:SiteFields>
+                <Field ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" Type="Text" Name="ProjectID" DisplayName="{localization:intranet:ProjectID}" Group="Base.Foundation.Columns" MaxLength="255" AllowDeletion="TRUE" />
+                <Field ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" Type="Text" Name="ProjectName" DisplayName="{localization:intranet:ProjectName}" Group="Base.Foundation.Columns" MaxLength="255" AllowDeletion="TRUE" />
+                <Field ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" Type="Text" Name="ProjectManager" DisplayName="{localization:intranet:ProjectManager}" Group="Base.Foundation.Columns" MaxLength="255" AllowDeletion="TRUE" />
+                <Field ID="{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}" Type="Text" Name="DocumentDescription" DisplayName="{localization:core:Description}" Group="Base.Foundation.Columns" MaxLength="255" AllowDeletion="TRUE" />
+            </pnp:SiteFields>
+
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x01005D4F34E4BE7F4B6892AEBE088EDD215E" Name="General Project Document" Group="Base Foundation Content Types" Description="General Project Document Content Type">
+                    <pnp:FieldRefs>
+                        <!-- Project ID -->
+                        <pnp:FieldRef ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" />
+                        <!-- Project Name -->
+                        <pnp:FieldRef ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" />
+                        <!-- Project Manager -->
+                        <pnp:FieldRef ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" />
+                        <!-- Project Description -->
+                        <pnp:FieldRef ID="{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}" />
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+
+                <pnp:ContentType ID="0x0120D5200039D83CD2C9BA4A4499AEE6BE3562E023" Name="ProjectDocumentSet" Description="Document Set for a Project" Hidden="false" Group="Document Sets Samples" ReadOnly="false" Sealed="false" Overwrite="false">
+                    <pnp:FieldRefs>
+                        <!-- Project ID -->
+                        <pnp:FieldRef ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" />
+                        <!-- Project Name -->
+                        <pnp:FieldRef ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" />
+                        <!-- Project Manager -->
+                        <pnp:FieldRef ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" />
+                    </pnp:FieldRefs>
+                    <pnp:DocumentSetTemplate WelcomePage="{sitecollection}/_cts/ProjectDocumentSet/ProjectHomePage.aspx">
+                        <pnp:AllowedContentTypes>
+                            <pnp:AllowedContentType ContentTypeID="0x0101" />
+                            <pnp:AllowedContentType ContentTypeID="0x01005D4F34E4BE7F4B6892AEBE088EDD215E" />
+                        </pnp:AllowedContentTypes>
+                        <pnp:DefaultDocuments>
+                            <pnp:DefaultDocument Name="ProjectMainDocument.docx" ContentTypeID="0x01005D4F34E4BE7F4B6892AEBE088EDD215E" FileSourcePath="./ProjectDocumentSet/ProjectMainDocument.docx"/>
+                            <pnp:DefaultDocument Name="Requirements.docx" ContentTypeID="0x0101" FileSourcePath="./ProjectDocumentSet/Requirements.docx"/>
+                            <pnp:DefaultDocument Name="Tests/TestModel.docx" ContentTypeID="0x0101" FileSourcePath="./ProjectDocumentSet/Tests/TestModel.docx"/>
+                            <pnp:DefaultDocument Name="Tests/Labs.docx" ContentTypeID="0x0101" FileSourcePath="./ProjectDocumentSet/Tests/Labs.docx"/>
+                        </pnp:DefaultDocuments>
+                        <pnp:SharedFields>
+                            <pnp:SharedField ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" />
+                            <pnp:SharedField ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" />
+                            <pnp:SharedField ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" />
+                        </pnp:SharedFields>
+                        <pnp:WelcomePageFields>
+                            <pnp:WelcomePageField ID="{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}" />
+                            <pnp:WelcomePageField ID="{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}" />
+                            <pnp:WelcomePageField ID="{A5DE9600-B7A6-42DD-A05E-10D4F1500208}" />
+                        </pnp:WelcomePageFields>
+                        <pnp:XmlDocuments>
+                            <XmlDocument NamespaceURI="http://schemas.microsoft.com/office/documentsets/defaultdocuments">
+                                <DefaultDocuments xmlns="http://schemas.microsoft.com/office/documentsets/defaultdocuments" LastModified="1/1/1 0:00:01 AM" AddSetName="" />
+                            </XmlDocument>
+                            <XmlDocument NamespaceURI="http://schemas.microsoft.com/office/documentsets/welcomepageview">
+                                <WelcomePageView xmlns="http://schemas.microsoft.com/office/documentsets/welcomepageview" LastModified="1/1/1 0:00:01 AM" />
+                            </XmlDocument>
+                            <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+                                <FormTemplates xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms">
+                                    <Display>ListForm</Display>
+                                    <Edit>ListForm</Edit>
+                                    <New>DocSetDisplayForm</New>
+                                </FormTemplates>
+                            </XmlDocument>
+                            <XmlDocument NamespaceURI="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
+                                <FormUrls xmlns="http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url">
+                                    <New>_layouts/15/NewDocSet.aspx</New>
+                                </FormUrls>
+                            </XmlDocument>
+                        </pnp:XmlDocuments>
+                    </pnp:DocumentSetTemplate>
+                </pnp:ContentType>
+
+            </pnp:ContentTypes>
+
+        </pnp:ProvisioningTemplate>
+
+    </pnp:Templates>
+
+</pnp:Provisioning>

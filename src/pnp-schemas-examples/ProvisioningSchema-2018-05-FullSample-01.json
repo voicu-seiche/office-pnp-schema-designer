@@ -1,0 +1,2886 @@
+{
+  "pnp:Provisioning": {
+    "$": {
+      "xmlns:pnp": "http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema"
+    },
+    "pnp:Preferences": [
+      {
+        "$": {
+          "Author": "John Black",
+          "Version": "1.0",
+          "Generator": "Human being :-)"
+        },
+        "pnp:Parameters": [
+          {
+            "pnp:Parameter": [
+              {
+                "_": "contoso",
+                "$": {
+                  "Key": "O365TenantName"
+                }
+              },
+              {
+                "$": {
+                  "Key": "CodeProvidedParam",
+                  "Required": "true"
+                }
+              },
+              {
+                "_": "contoso.com",
+                "$": {
+                  "Key": "YammerNetwork"
+                }
+              },
+              {
+                "_": "1033",
+                "$": {
+                  "Key": "lcid"
+                }
+              },
+              {
+                "_": "Contoso Inc.",
+                "$": {
+                  "Key": "CompanyName"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pnp:Localizations": [
+      {
+        "pnp:Localization": [
+          {
+            "$": {
+              "LCID": "1033",
+              "Name": "core",
+              "ResourceFile": "resources-core.en-us.resx"
+            }
+          },
+          {
+            "$": {
+              "LCID": "1040",
+              "Name": "core",
+              "ResourceFile": "resources-core.it-it.resx"
+            }
+          },
+          {
+            "$": {
+              "LCID": "1031",
+              "Name": "core",
+              "ResourceFile": "resources-core.de-de.resx"
+            }
+          },
+          {
+            "$": {
+              "LCID": "1033",
+              "Name": "intranet",
+              "ResourceFile": "resources-intranet.en-us.resx"
+            }
+          },
+          {
+            "$": {
+              "LCID": "1040",
+              "Name": "intranet",
+              "ResourceFile": "resources-intranet.it-it.resx"
+            }
+          },
+          {
+            "$": {
+              "LCID": "1031",
+              "Name": "intranet",
+              "ResourceFile": "resources-intranet.de-de.resx"
+            }
+          }
+        ]
+      }
+    ],
+    "pnp:Tenant": [
+      {
+        "pnp:SiteDesigns": [
+          {
+            "pnp:SiteDesign": [
+              {
+                "$": {
+                  "IsDefault": "true",
+                  "Title": "PnP Site Design",
+                  "Description": "Just a sample",
+                  "PreviewImageUrl": "PnPSiteDesign.png",
+                  "PreviewImageAltText": "PnP Site Design Preview",
+                  "WebTemplate": "CommunicationSite",
+                  "Overwrite": "false"
+                },
+                "pnp:SiteScripts": [
+                  {
+                    "pnp:SiteScriptRef": [
+                      {
+                        "$": {
+                          "ID": "{SiteScriptID:PnP Site Script 01}"
+                        }
+                      },
+                      {
+                        "$": {
+                          "ID": "{SiteScriptID:PnP Site Script 03}"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:Grants": [
+                  {
+                    "pnp:Grant": [
+                      {
+                        "$": {
+                          "Principal": "user1@contoso.com",
+                          "Right": "View"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Principal": "user2@contoso.com",
+                          "Right": "View"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Principal": "user3@contoso.com",
+                          "Right": "None"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "pnp:SiteScripts": [
+          {
+            "pnp:SiteScript": [
+              {
+                "$": {
+                  "Title": "PnP Site Script 01",
+                  "Description": "PnP Site Script Sample 01",
+                  "JsonFilePath": ".\\pnp-site-script-01.json",
+                  "Overwrite": "true"
+                }
+              },
+              {
+                "$": {
+                  "Title": "PnP Site Script 02",
+                  "Description": "PnP Site Script Sample 02",
+                  "JsonFilePath": ".\\pnp-site-script-02.json",
+                  "Overwrite": "false"
+                }
+              },
+              {
+                "$": {
+                  "Title": "PnP Site Script 03",
+                  "Description": "PnP Site Script Sample 03",
+                  "JsonFilePath": ".\\pnp-site-script-03.json"
+                }
+              }
+            ]
+          }
+        ],
+        "pnp:StorageEntities": [
+          {
+            "pnp:StorageEntity": [
+              {
+                "$": {
+                  "Key": "PnPKey01",
+                  "Value": "My custom tenant-wide value 01",
+                  "Comment": "Comment 01",
+                  "Description": "Description 01"
+                }
+              },
+              {
+                "$": {
+                  "Key": "PnPKey02",
+                  "Value": "{ Id: 1, Property: 'Some text here'}",
+                  "Description": "Description 02"
+                }
+              }
+            ]
+          }
+        ],
+        "pnp:AppCatalog": [
+          {
+            "pnp:Package": [
+              {
+                "$": {
+                  "Src": "solution\\spfx-discuss-now.sppkg",
+                  "Action": "UploadAndPublish",
+                  "SkipFeatureDeployment": "true",
+                  "Overwrite": "true"
+                }
+              },
+              {
+                "$": {
+                  "PackageId": "d0816f0a-fda4-4a98-8e61-1bbe1f2b5b27",
+                  "Action": "Publish"
+                }
+              },
+              {
+                "$": {
+                  "PackageId": "9672a07b-c111-4a12-bb5b-8d43c2ddd256",
+                  "Action": "Remove"
+                }
+              }
+            ]
+          }
+        ],
+        "pnp:WebApiPermissions": [
+          {
+            "pnp:WebApiPermission": [
+              {
+                "$": {
+                  "Resource": "Microsoft.Graph",
+                  "Scope": "User.ReadBasic.All"
+                }
+              },
+              {
+                "$": {
+                  "Resource": "Microsoft.Graph",
+                  "Scope": "Group.ReadWrite.All"
+                }
+              },
+              {
+                "$": {
+                  "Resource": "MyCustomEnterpriseAPI",
+                  "Scope": "Invoke.Custom.Action"
+                }
+              }
+            ]
+          }
+        ],
+        "pnp:ContentDeliveryNetwork": [
+          {
+            "pnp:Public": [
+              {
+                "$": {
+                  "Enabled": "true"
+                },
+                "pnp:Origins": [
+                  {
+                    "pnp:Origin": [
+                      {
+                        "$": {
+                          "Url": "sites/CDN/CDNFiles",
+                          "Action": "Add"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Url": "sites/CDN/CDNFiles-Wrong",
+                          "Action": "Remove"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:IncludeFileExtensions": [
+                  "PDF,XML,JPG,JS,PNG"
+                ],
+                "pnp:ExcludeRestrictedSiteClassifications": [
+                  "HBI,GDPR"
+                ]
+              }
+            ],
+            "pnp:Private": [
+              {
+                "$": {
+                  "Enabled": "true"
+                },
+                "pnp:Origins": [
+                  {
+                    "pnp:Origin": [
+                      {
+                        "$": {
+                          "Url": "sites/CDNPrivate/CDNFiles",
+                          "Action": "Add"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Url": "sites/CDNPrivate/CDNFiles-Wrong",
+                          "Action": "Remove"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:IncludeFileExtensions": [
+                  "PDF,XML,JPG,JS,PNG"
+                ],
+                "pnp:ExcludeRestrictedSiteClassifications": [
+                  "HIB,GDPR"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pnp:Templates": [
+      {
+        "$": {
+          "ID": "SAMPLE-TEMPLATES"
+        },
+        "pnp:ProvisioningTemplateFile": [
+          {
+            "$": {
+              "ID": "WORKFLOWSITE",
+              "File": "ProvisioningSchema-2015-05-ReferenceSample-01.xml"
+            }
+          }
+        ],
+        "pnp:ProvisioningTemplate": [
+          {
+            "$": {
+              "ID": "SPECIALTEAM",
+              "Version": "1.0",
+              "BaseSiteTemplate": "STS#0",
+              "ImagePreviewUrl": "https://preview.png",
+              "DisplayName": "Special Team Site",
+              "Description": "This is a Special Team Site for custom provisioning",
+              "Scope": "RootSite",
+              "TemplateCultureInfo": "1040"
+            },
+            "pnp:Properties": [
+              {
+                "pnp:Property": [
+                  {
+                    "$": {
+                      "Key": "Something",
+                      "Value": "One property"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Key": "SomethingElse",
+                      "Value": "Another property ... Who knows ..."
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:SitePolicy": [
+              "HBI"
+            ],
+            "pnp:WebSettings": [
+              {
+                "$": {
+                  "RequestAccessEmail": "someone@company.com",
+                  "NoCrawl": "false",
+                  "WelcomePage": "/Pages/Home.aspx",
+                  "Title": "Site Title",
+                  "Description": "Site Description",
+                  "SiteLogo": "{sitecollection}/SiteAssets/Logo.png",
+                  "AlternateCSS": "{sitecollection}/Resources/Themes/Contoso/Contoso.css",
+                  "MasterPageUrl": "{sitecollection}/_catalogs/MasterPage/oslo.master",
+                  "CustomMasterPageUrl": "{sitecollection}/_catalogs/MasterPage/CustomMaster.master",
+                  "HubSiteUrl": "/sites/hubsite",
+                  "CommentsOnSitePagesDisabled": "false"
+                }
+              }
+            ],
+            "pnp:RegionalSettings": [
+              {
+                "$": {
+                  "AdjustHijriDays": "1",
+                  "AlternateCalendarType": "Chinese Lunar",
+                  "CalendarType": "Hebrew",
+                  "Collation": "5",
+                  "FirstDayOfWeek": "Sunday",
+                  "FirstWeekOfYear": "1",
+                  "LocaleId": "1040",
+                  "ShowWeeks": "true",
+                  "Time24": "true",
+                  "TimeZone": "4",
+                  "WorkDayEndHour": "5:00PM",
+                  "WorkDayStartHour": "9:00AM",
+                  "WorkDays": "62"
+                }
+              }
+            ],
+            "pnp:SupportedUILanguages": [
+              {
+                "pnp:SupportedUILanguage": [
+                  {
+                    "$": {
+                      "LCID": "1033"
+                    }
+                  },
+                  {
+                    "$": {
+                      "LCID": "1040"
+                    }
+                  },
+                  {
+                    "$": {
+                      "LCID": "1031"
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:AuditSettings": [
+              {
+                "$": {
+                  "AuditLogTrimmingRetention": "50",
+                  "TrimAuditLog": "true"
+                },
+                "pnp:Audit": [
+                  {
+                    "$": {
+                      "AuditFlag": "CheckIn"
+                    }
+                  },
+                  {
+                    "$": {
+                      "AuditFlag": "CheckOut"
+                    }
+                  },
+                  {
+                    "$": {
+                      "AuditFlag": "Update"
+                    }
+                  },
+                  {
+                    "$": {
+                      "AuditFlag": "View"
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:PropertyBagEntries": [
+              {
+                "pnp:PropertyBagEntry": [
+                  {
+                    "$": {
+                      "Key": "KEY1",
+                      "Value": "value1",
+                      "Overwrite": "true"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Key": "KEY2",
+                      "Value": "value2"
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:Security": [
+              {
+                "$": {
+                  "BreakRoleInheritance": "true",
+                  "CopyRoleAssignments": "false",
+                  "ClearSubscopes": "true"
+                },
+                "pnp:AdditionalAdministrators": [
+                  {
+                    "pnp:User": [
+                      {
+                        "$": {
+                          "Name": "user@contoso.com"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Name": "U_SHAREPOINT_ADMINS"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:AdditionalOwners": [
+                  {
+                    "pnp:User": [
+                      {
+                        "$": {
+                          "Name": "user@contoso.com"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Name": "U_SHAREPOINT_ADMINS"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:AdditionalMembers": [
+                  {
+                    "pnp:User": [
+                      {
+                        "$": {
+                          "Name": "user@contoso.com"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Name": "U_SHAREPOINT_ADMINS"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:AdditionalVisitors": [
+                  {
+                    "pnp:User": [
+                      {
+                        "$": {
+                          "Name": "user@contoso.com"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Name": "U_SHAREPOINT_ADMINS"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:SiteGroups": [
+                  {
+                    "pnp:SiteGroup": [
+                      {
+                        "$": {
+                          "Title": "Power Users",
+                          "Description": "Group of Power Users",
+                          "Owner": "admin@contoso.com"
+                        },
+                        "pnp:Members": [
+                          {
+                            "pnp:User": [
+                              {
+                                "$": {
+                                  "Name": "user1@contoso.com"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Name": "user2@contoso.com"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Name": "user3@contoso.com"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "pnp:Permissions": [
+                  {
+                    "pnp:RoleDefinitions": [
+                      {
+                        "pnp:RoleDefinition": [
+                          {
+                            "$": {
+                              "Name": "Manage List Items",
+                              "Description": "Allows a user to manage list items"
+                            },
+                            "pnp:Permissions": [
+                              {
+                                "pnp:Permission": [
+                                  "ViewListItems",
+                                  "AddListItems",
+                                  "EditListItems",
+                                  "DeleteListItems"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:RoleAssignments": [
+                      {
+                        "pnp:RoleAssignment": [
+                          {
+                            "$": {
+                              "Principal": "Power Users",
+                              "RoleDefinition": "Manage List Items"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Principal": "user1@contoso.com",
+                              "RoleDefinition": "Manage List Items"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Principal": "user2@contoso.com",
+                              "RoleDefinition": "Full Control"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Principal": "user3@contoso.com",
+                              "RoleDefinition": "Full Control",
+                              "Remove": "true"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:Navigation": [
+              {
+                "$": {
+                  "EnableTreeView": "true",
+                  "AddNewPagesToNavigation": "true",
+                  "CreateFriendlyUrlsForNewPages": "true"
+                },
+                "pnp:GlobalNavigation": [
+                  {
+                    "$": {
+                      "NavigationType": "Managed"
+                    },
+                    "pnp:ManagedNavigation": [
+                      {
+                        "$": {
+                          "TermStoreId": "{sitecollectiontermstoreid}",
+                          "TermSetId": "{sitecollectionnavigationtermsetid}"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:CurrentNavigation": [
+                  {
+                    "$": {
+                      "NavigationType": "Structural"
+                    },
+                    "pnp:StructuralNavigation": [
+                      {
+                        "$": {
+                          "RemoveExistingNodes": "true"
+                        },
+                        "pnp:NavigationNode": [
+                          {
+                            "$": {
+                              "Title": "Home",
+                              "IsExternal": "false",
+                              "Url": "Default.aspx"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Title": "Libraries"
+                            },
+                            "pnp:NavigationNode": [
+                              {
+                                "$": {
+                                  "Title": "Invoices",
+                                  "IsExternal": "false",
+                                  "Url": "Invoices/Forms/AllItems.aspx"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Title": "Offers",
+                                  "IsExternal": "false",
+                                  "Url": "Offers/Forms/AllItems.aspx"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "$": {
+                              "Title": "Privacy",
+                              "IsExternal": "true",
+                              "Url": "http://www.company.com/privacy/"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:SiteFields": [
+              {
+                "Field": [
+                  {
+                    "$": {
+                      "ID": "{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}",
+                      "Type": "Text",
+                      "Name": "ProjectID",
+                      "DisplayName": "{localization:intranet:ProjectID}",
+                      "Group": "Base.Foundation.Columns",
+                      "MaxLength": "255",
+                      "AllowDeletion": "TRUE"
+                    }
+                  },
+                  {
+                    "$": {
+                      "ID": "{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}",
+                      "Type": "Text",
+                      "Name": "ProjectName",
+                      "DisplayName": "{localization:intranet:ProjectName}",
+                      "Group": "Base.Foundation.Columns",
+                      "MaxLength": "255",
+                      "AllowDeletion": "TRUE"
+                    }
+                  },
+                  {
+                    "$": {
+                      "ID": "{A5DE9600-B7A6-42DD-A05E-10D4F1500208}",
+                      "Type": "Text",
+                      "Name": "ProjectManager",
+                      "DisplayName": "{localization:intranet:ProjectManager}",
+                      "Group": "Base.Foundation.Columns",
+                      "MaxLength": "255",
+                      "AllowDeletion": "TRUE"
+                    }
+                  },
+                  {
+                    "$": {
+                      "ID": "{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}",
+                      "Type": "Text",
+                      "Name": "DocumentDescription",
+                      "DisplayName": "{localization:core:Description}",
+                      "Group": "Base.Foundation.Columns",
+                      "MaxLength": "255",
+                      "AllowDeletion": "TRUE"
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:ContentTypes": [
+              {
+                "pnp:ContentType": [
+                  {
+                    "$": {
+                      "ID": "0x01005D4F34E4BE7F4B6892AEBE088EDD215E",
+                      "Name": "General Project Document",
+                      "Group": "Base Foundation Content Types",
+                      "Description": "General Project Document Content Type"
+                    },
+                    "pnp:FieldRefs": [
+                      {
+                        "pnp:FieldRef": [
+                          {
+                            "$": {
+                              "ID": "{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}"
+                            }
+                          },
+                          {
+                            "$": {
+                              "ID": "{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}"
+                            }
+                          },
+                          {
+                            "$": {
+                              "ID": "{A5DE9600-B7A6-42DD-A05E-10D4F1500208}"
+                            }
+                          },
+                          {
+                            "$": {
+                              "ID": "{F1A1715E-6C52-40DE-8403-E9AAFD0470D0}"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "$": {
+                      "ID": "0x0120D5200039D83CD2C9BA4A4499AEE6BE3562E023",
+                      "Name": "ProjectDocumentSet",
+                      "Description": "Document Set for a Project",
+                      "Hidden": "false",
+                      "Group": "Document Sets Samples",
+                      "ReadOnly": "false",
+                      "Sealed": "false",
+                      "Overwrite": "false"
+                    },
+                    "pnp:FieldRefs": [
+                      {
+                        "pnp:FieldRef": [
+                          {
+                            "$": {
+                              "ID": "{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}"
+                            }
+                          },
+                          {
+                            "$": {
+                              "ID": "{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}"
+                            }
+                          },
+                          {
+                            "$": {
+                              "ID": "{A5DE9600-B7A6-42DD-A05E-10D4F1500208}"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:DocumentSetTemplate": [
+                      {
+                        "$": {
+                          "WelcomePage": "{sitecollection}/_cts/ProjectDocumentSet/ProjectHomePage.aspx"
+                        },
+                        "pnp:AllowedContentTypes": [
+                          {
+                            "pnp:AllowedContentType": [
+                              {
+                                "$": {
+                                  "ContentTypeID": "0x0101"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "ContentTypeID": "0x01005D4F34E4BE7F4B6892AEBE088EDD215E"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "pnp:DefaultDocuments": [
+                          {
+                            "pnp:DefaultDocument": [
+                              {
+                                "$": {
+                                  "Name": "ProjectMainDocument.docx",
+                                  "ContentTypeID": "0x01005D4F34E4BE7F4B6892AEBE088EDD215E",
+                                  "FileSourcePath": "./ProjectDocumentSet/ProjectMainDocument.docx"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Name": "Requirements.docx",
+                                  "ContentTypeID": "0x0101",
+                                  "FileSourcePath": "./ProjectDocumentSet/Requirements.docx"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Name": "Tests/TestModel.docx",
+                                  "ContentTypeID": "0x0101",
+                                  "FileSourcePath": "./ProjectDocumentSet/Tests/TestModel.docx"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Name": "Tests/Labs.docx",
+                                  "ContentTypeID": "0x0101",
+                                  "FileSourcePath": "./ProjectDocumentSet/Tests/Labs.docx"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "pnp:SharedFields": [
+                          {
+                            "pnp:SharedField": [
+                              {
+                                "$": {
+                                  "ID": "{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "ID": "{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "ID": "{A5DE9600-B7A6-42DD-A05E-10D4F1500208}"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "pnp:WelcomePageFields": [
+                          {
+                            "pnp:WelcomePageField": [
+                              {
+                                "$": {
+                                  "ID": "{23203E97-3BFE-40CB-AFB4-07AA2B86BF45}"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "ID": "{B01B3DBC-4630-4ED1-B5BA-321BC7841E3D}"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "ID": "{A5DE9600-B7A6-42DD-A05E-10D4F1500208}"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "pnp:XmlDocuments": [
+                          {
+                            "XmlDocument": [
+                              {
+                                "$": {
+                                  "NamespaceURI": "http://schemas.microsoft.com/office/documentsets/defaultdocuments"
+                                },
+                                "DefaultDocuments": [
+                                  {
+                                    "$": {
+                                      "xmlns": "http://schemas.microsoft.com/office/documentsets/defaultdocuments",
+                                      "LastModified": "1/1/1 0:00:01 AM",
+                                      "AddSetName": ""
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "$": {
+                                  "NamespaceURI": "http://schemas.microsoft.com/office/documentsets/welcomepageview"
+                                },
+                                "WelcomePageView": [
+                                  {
+                                    "$": {
+                                      "xmlns": "http://schemas.microsoft.com/office/documentsets/welcomepageview",
+                                      "LastModified": "1/1/1 0:00:01 AM"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "$": {
+                                  "NamespaceURI": "http://schemas.microsoft.com/sharepoint/v3/contenttype/forms"
+                                },
+                                "FormTemplates": [
+                                  {
+                                    "$": {
+                                      "xmlns": "http://schemas.microsoft.com/sharepoint/v3/contenttype/forms"
+                                    },
+                                    "Display": [
+                                      "ListForm"
+                                    ],
+                                    "Edit": [
+                                      "ListForm"
+                                    ],
+                                    "New": [
+                                      "DocSetDisplayForm"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "$": {
+                                  "NamespaceURI": "http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url"
+                                },
+                                "FormUrls": [
+                                  {
+                                    "$": {
+                                      "xmlns": "http://schemas.microsoft.com/sharepoint/v3/contenttype/forms/url"
+                                    },
+                                    "New": [
+                                      "_layouts/15/NewDocSet.aspx"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:Lists": [
+              {
+                "pnp:ListInstance": [
+                  {
+                    "$": {
+                      "Title": "{parameter:CompanyName} - Projects",
+                      "Description": "Project Documents are stored here",
+                      "DocumentTemplate": "",
+                      "OnQuickLaunch": "true",
+                      "TemplateType": "101",
+                      "Url": "Lists/Projects",
+                      "EnableVersioning": "true",
+                      "ForceCheckout": "true",
+                      "RemoveExistingContentTypes": "false",
+                      "NoCrawl": "true",
+                      "ListExperience": "ClassicExperience",
+                      "ContentTypesEnabled": "true",
+                      "DefaultDisplayFormUrl": "./Forms/Display.aspx",
+                      "DefaultEditFormUrl": "./Forms/Edit.aspx",
+                      "DefaultNewFormUrl": "./Forms/NewItem.aspx",
+                      "Direction": "LTR",
+                      "DraftVersionVisibility": "1",
+                      "EnableAttachments": "false",
+                      "EnableFolderCreation": "true",
+                      "EnableMinorVersions": "true",
+                      "EnableModeration": "false",
+                      "Hidden": "false",
+                      "ImageUrl": "./Images/Sample.png",
+                      "IrmExpire": "true",
+                      "IrmReject": "false",
+                      "IsApplicationList": "false",
+                      "MaxVersionLimit": "10",
+                      "MinorVersionLimit": "10",
+                      "ReadSecurity": "11",
+                      "TemplateFeatureID": "81a7b6a8-c0e9-4819-aea1-8fc8894d3c43",
+                      "ValidationFormula": "sample formula here",
+                      "ValidationMessage": "validation message here"
+                    },
+                    "pnp:ContentTypeBindings": [
+                      {
+                        "pnp:ContentTypeBinding": [
+                          {
+                            "$": {
+                              "ContentTypeID": "0x01005D4F34E4BE7F4B6892AEBE088EDD215E",
+                              "Default": "true"
+                            }
+                          },
+                          {
+                            "$": {
+                              "ContentTypeID": "0x0120",
+                              "Remove": "true"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:DataRows": [
+                      {
+                        "$": {
+                          "KeyColumn": "ProjectID",
+                          "UpdateBehavior": "Overwrite"
+                        },
+                        "pnp:DataRow": [
+                          {
+                            "pnp:DataValue": [
+                              {
+                                "_": "PRJ01",
+                                "$": {
+                                  "FieldName": "ProjectID"
+                                }
+                              },
+                              {
+                                "_": "Sample Project 01",
+                                "$": {
+                                  "FieldName": "ProjectName"
+                                }
+                              },
+                              {
+                                "_": "Me",
+                                "$": {
+                                  "FieldName": "ProjectManager"
+                                }
+                              },
+                              {
+                                "_": "This is a sample Project",
+                                "$": {
+                                  "FieldName": "ProjectDescription"
+                                }
+                              }
+                            ],
+                            "pnp:Security": [
+                              {
+                                "pnp:BreakRoleInheritance": [
+                                  {
+                                    "$": {
+                                      "CopyRoleAssignments": "true",
+                                      "ClearSubscopes": "true"
+                                    },
+                                    "pnp:RoleAssignment": [
+                                      {
+                                        "$": {
+                                          "Principal": "user1@contoso.com",
+                                          "RoleDefinition": "Full Control"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Principal": "user2@contoso.com",
+                                          "RoleDefinition": "Edit"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Principal": "user3@contoso.com",
+                                          "RoleDefinition": "View Only"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "pnp:DataValue": [
+                              {
+                                "_": "PRJ021",
+                                "$": {
+                                  "FieldName": "ProjectID"
+                                }
+                              },
+                              {
+                                "_": "Sample Project 02",
+                                "$": {
+                                  "FieldName": "ProjectName"
+                                }
+                              },
+                              {
+                                "_": "You",
+                                "$": {
+                                  "FieldName": "ProjectManager"
+                                }
+                              },
+                              {
+                                "_": "This is another sample Project",
+                                "$": {
+                                  "FieldName": "ProjectDescription"
+                                }
+                              }
+                            ],
+                            "pnp:Security": [
+                              {
+                                "pnp:BreakRoleInheritance": [
+                                  {
+                                    "$": {
+                                      "CopyRoleAssignments": "false",
+                                      "ClearSubscopes": "true"
+                                    },
+                                    "pnp:RoleAssignment": [
+                                      {
+                                        "$": {
+                                          "Principal": "user3@contoso.com",
+                                          "RoleDefinition": "Full Control"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Principal": "user2@contoso.com",
+                                          "RoleDefinition": "Edit"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Principal": "user1@contoso.com",
+                                          "RoleDefinition": "View Only"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:FieldDefaults": [
+                      {
+                        "pnp:FieldDefault": [
+                          {
+                            "_": "Default Project Name",
+                            "$": {
+                              "FieldName": "ProjectName"
+                            }
+                          },
+                          {
+                            "_": "[Me]",
+                            "$": {
+                              "FieldName": "ProjectManager"
+                            }
+                          },
+                          {
+                            "_": "Default Project Description",
+                            "$": {
+                              "FieldName": "ProjectDescription"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:Security": [
+                      {
+                        "pnp:BreakRoleInheritance": [
+                          {
+                            "$": {
+                              "CopyRoleAssignments": "true",
+                              "ClearSubscopes": "true"
+                            },
+                            "pnp:RoleAssignment": [
+                              {
+                                "$": {
+                                  "Principal": "Power Users",
+                                  "RoleDefinition": "Full Control"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Principal": "Guests",
+                                  "RoleDefinition": "View Only"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:Folders": [
+                      {
+                        "pnp:Folder": [
+                          {
+                            "$": {
+                              "Name": "SubFolder-01"
+                            },
+                            "pnp:Folder": [
+                              {
+                                "$": {
+                                  "Name": "SubFolder-01-01"
+                                },
+                                "pnp:Folder": [
+                                  {
+                                    "$": {
+                                      "Name": "SubFolder-01-01-01"
+                                    },
+                                    "pnp:PropertyBagEntries": [
+                                      {
+                                        "pnp:PropertyBagEntry": [
+                                          {
+                                            "$": {
+                                              "Key": "Key1",
+                                              "Value": "Value1",
+                                              "Indexed": "false",
+                                              "Overwrite": "true"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ],
+                            "pnp:Security": [
+                              {
+                                "pnp:BreakRoleInheritance": [
+                                  {
+                                    "$": {
+                                      "CopyRoleAssignments": "false",
+                                      "ClearSubscopes": "true"
+                                    },
+                                    "pnp:RoleAssignment": [
+                                      {
+                                        "$": {
+                                          "Principal": "user3@contoso.com",
+                                          "RoleDefinition": "Full Control"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Principal": "user2@contoso.com",
+                                          "RoleDefinition": "Edit"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Principal": "user1@contoso.com",
+                                          "RoleDefinition": "View Only"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "$": {
+                              "Name": "SubFolder-02"
+                            },
+                            "pnp:Folder": [
+                              {
+                                "$": {
+                                  "Name": "SubFolder-02-01"
+                                },
+                                "pnp:Folder": [
+                                  {
+                                    "$": {
+                                      "Name": "SubFolder-02-01-01"
+                                    },
+                                    "pnp:Security": [
+                                      {
+                                        "pnp:BreakRoleInheritance": [
+                                          {
+                                            "$": {
+                                              "CopyRoleAssignments": "false",
+                                              "ClearSubscopes": "true"
+                                            },
+                                            "pnp:RoleAssignment": [
+                                              {
+                                                "$": {
+                                                  "Principal": "user3@contoso.com",
+                                                  "RoleDefinition": "Full Control"
+                                                }
+                                              },
+                                              {
+                                                "$": {
+                                                  "Principal": "user2@contoso.com",
+                                                  "RoleDefinition": "Edit"
+                                                }
+                                              },
+                                              {
+                                                "$": {
+                                                  "Principal": "user1@contoso.com",
+                                                  "RoleDefinition": "View Only"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "$": {
+                              "Name": "SubFolder-03"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:UserCustomActions": [
+                      {
+                        "pnp:CustomAction": [
+                          {
+                            "$": {
+                              "Name": "CA_LIST_ECB_ITEM",
+                              "Description": "Custom Action for ECB in List",
+                              "RegistrationType": "ContentType",
+                              "RegistrationId": "0x01005D4F34E4BE7F4B6892AEBE088EDD215E",
+                              "Location": "EditControlBlock",
+                              "Sequence": "1000",
+                              "Rights": "EditListItems,AddListItems,DeleteListItems",
+                              "Title": "Sample Custom Action",
+                              "Url": "https://spmanaged.azurewebsites.net/customAction/?ItemUrl={ItemUrl}&ItemId={ItemId}&ListId={ListId}&SiteUrl={SiteUrl}",
+                              "Enabled": "true"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:Webhooks": [
+                      {
+                        "pnp:Webhook": [
+                          {
+                            "$": {
+                              "ExpiresInDays": "120",
+                              "ServerNotificationUrl": "http://myapp.azurewebsites.net/WebHookListener"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:IRMSettings": [
+                      {
+                        "$": {
+                          "AllowPrint": "true",
+                          "AllowWriteCopy": "false",
+                          "AllowScript": "true",
+                          "DisableDocumentBrowserView": "true",
+                          "DocumentAccessExpireDays": "30",
+                          "DocumentLibraryProtectionExpiresInDays": "90",
+                          "Enabled": "true",
+                          "EnableDocumentAccessExpire": "true",
+                          "EnableDocumentBrowserPublishingView": "true",
+                          "EnableGroupProtection": "false",
+                          "EnableLicenseCacheExpire": "false",
+                          "GroupName": "Custom IRM Group",
+                          "LicenseCacheExpireDays": "60",
+                          "PolicyDescription": "Sample IRM Policy",
+                          "PolicyTitle": "Sample IRM Policy"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "$": {
+                      "Title": "General Documents",
+                      "Description": "Project Documents are stored here",
+                      "DocumentTemplate": "",
+                      "OnQuickLaunch": "true",
+                      "TemplateType": "101",
+                      "Url": "Lists/GeneralDocuments",
+                      "ReadSecurity": "11",
+                      "WriteSecurity": "11",
+                      "EnableVersioning": "true",
+                      "RemoveExistingContentTypes": "true"
+                    },
+                    "pnp:ContentTypeBindings": [
+                      {
+                        "pnp:ContentTypeBinding": [
+                          {
+                            "$": {
+                              "ContentTypeID": "0x01005D4F34E4BE7F4B6892AEBE088EDD215E",
+                              "Default": "true"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "$": {
+                      "Title": "Sample BCS List",
+                      "Description": "List with data via BCS",
+                      "OnQuickLaunch": "true",
+                      "TemplateType": "101",
+                      "Url": "Lists/SampleBCS"
+                    },
+                    "pnp:DataSource": [
+                      {
+                        "pnp:DataSourceItem": [
+                          {
+                            "$": {
+                              "Key": "LobSystemInstance",
+                              "Value": "ODS"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Key": "EntityNamespace",
+                              "Value": "https://sample.contoso.com/ODS"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Key": "Entity",
+                              "Value": "ODS.Customer"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Key": "SpecificFinder",
+                              "Value": "CustomerRead Item"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:Features": [
+              {
+                "pnp:SiteFeatures": [
+                  {
+                    "pnp:Feature": [
+                      {
+                        "$": {
+                          "ID": "b50e3104-6812-424f-a011-cc90e6327318",
+                          "Description": "Document ID Service (DocID) site collection feature"
+                        }
+                      },
+                      {
+                        "$": {
+                          "ID": "9c0834e1-ba47-4d49-812b-7d4fb6fea211",
+                          "Description": "Search Server Web Parts and Templates (SearchMaster) site collection feature"
+                        }
+                      },
+                      {
+                        "$": {
+                          "ID": "0af5989a-3aea-4519-8ab0-85d91abe39ff",
+                          "Deactivate": "true",
+                          "Description": "Workflows (Workflows) site collection feature"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:WebFeatures": [
+                  {
+                    "pnp:Feature": [
+                      {
+                        "$": {
+                          "ID": "7201d6a4-a5d3-49a1-8c19-19c4bac6e668",
+                          "Deactivate": "false",
+                          "Description": "Metadata Navigation and Filtering (MetaDataNav) site feature"
+                        }
+                      },
+                      {
+                        "$": {
+                          "ID": "961d6a9c-4388-4cf2-9733-38ee8c89afd4",
+                          "Description": "Community Site Feature (CommunitySite) site feature"
+                        }
+                      },
+                      {
+                        "$": {
+                          "ID": "e2f2bb18-891d-4812-97df-c265afdba297",
+                          "Description": "Project Functionality (ProjectFunctionality) site feature"
+                        }
+                      },
+                      {
+                        "$": {
+                          "ID": "4aec7207-0d02-4f4f-aa07-b370199cd0c7",
+                          "Deactivate": "true",
+                          "Description": "Getting Started (GettingStarted) site feature"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:CustomActions": [
+              {
+                "pnp:SiteCustomActions": [
+                  {
+                    "pnp:CustomAction": [
+                      {
+                        "$": {
+                          "Name": "CA_SITE_SETTINGS_SITECLASSIFICATION",
+                          "Description": "Site Classification Application",
+                          "Group": "SiteTasks",
+                          "Location": "Microsoft.SharePoint.SiteSettings",
+                          "Title": "Site Classification",
+                          "Sequence": "1000",
+                          "Url": "https://spmanaged.azurewebsites.net/pages/index.aspx?SPHostUrl={0}",
+                          "Rights": "31",
+                          "Enabled": "true"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Name": "CA_STDMENU_SITECLASSIFICATION",
+                          "Description": "Site Classification Application",
+                          "Group": "SiteActions",
+                          "Location": "Microsoft.SharePoint.StandardMenu",
+                          "Title": "Site Classification",
+                          "Sequence": "1000",
+                          "Url": "https://spmanaged.azurewebsites.net/pages/index.aspx?SPHostUrl={0}",
+                          "Rights": "31",
+                          "Enabled": "true"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:WebCustomActions": [
+                  {
+                    "pnp:CustomAction": [
+                      {
+                        "$": {
+                          "Name": "CA_SUBSITE_OVERRIDE",
+                          "Description": "Override new sub-site link",
+                          "Group": "SiteTasks",
+                          "Location": "Microsoft.SharePoint.SiteSettings",
+                          "Title": "SubSite Overide",
+                          "Sequence": "1000",
+                          "Url": "https://spmanaged.azurewebsites.net/pages/index.aspx?SPHostUrl={0}",
+                          "Rights": "31",
+                          "Enabled": "true"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:Files": [
+              {
+                "pnp:File": [
+                  {
+                    "$": {
+                      "Src": "Logo.png",
+                      "Folder": "SiteAssets",
+                      "Overwrite": "true",
+                      "TargetFileName": "CompanyLogo.png"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Src": "CustomPage.aspx",
+                      "Folder": "SitePages",
+                      "Overwrite": "true"
+                    },
+                    "pnp:Security": [
+                      {
+                        "pnp:BreakRoleInheritance": [
+                          {
+                            "$": {
+                              "CopyRoleAssignments": "true",
+                              "ClearSubscopes": "true"
+                            },
+                            "pnp:RoleAssignment": [
+                              {
+                                "$": {
+                                  "Principal": "Power Users",
+                                  "RoleDefinition": "Full Control"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "$": {
+                      "Src": "CustomMaster.master",
+                      "Folder": "_catalogs/MasterPage",
+                      "Overwrite": "true",
+                      "Level": "Published"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Src": "Custom.spcolor",
+                      "Folder": "_catalogs/Theme/15",
+                      "Overwrite": "true"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Src": "Custom.spfont",
+                      "Folder": "_catalogs/Theme/15",
+                      "Overwrite": "true"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Src": "ProjectHomePage.aspx",
+                      "Folder": "_cts/ProjectDocumentSet/",
+                      "Overwrite": "true"
+                    }
+                  }
+                ],
+                "pnp:Directory": [
+                  {
+                    "$": {
+                      "Src": "c:\\LocalPath\\StyleLibrary",
+                      "Folder": "Style%20Library",
+                      "Overwrite": "true",
+                      "Recursive": "true",
+                      "IncludedExtensions": "*.css,*.js,*.woff",
+                      "ExcludedExtensions": "*.xml,*.json"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Src": ".\\Invoices",
+                      "Folder": "Invoices",
+                      "Overwrite": "true",
+                      "Recursive": "false",
+                      "MetadataMappingFile": ".\\InvoicesMetadata.json"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Src": "c:\\LocalPath\\Pages",
+                      "Folder": "{PagesLibrary}",
+                      "Overwrite": "true",
+                      "Recursive": "true",
+                      "Level": "Published",
+                      "MetadataMappingFile": "c:\\LocalPath\\PagesMetadata.json"
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:Pages": [
+              {
+                "pnp:Page": [
+                  {
+                    "$": {
+                      "Layout": "TwoColumns",
+                      "Overwrite": "true",
+                      "Url": "{site}/SitePages/DemoWikiPage.aspx"
+                    }
+                  },
+                  {
+                    "$": {
+                      "Layout": "OneColumn",
+                      "Overwrite": "true",
+                      "Url": "{site}/SitePages/OneColumnPage.aspx"
+                    },
+                    "pnp:Security": [
+                      {
+                        "pnp:BreakRoleInheritance": [
+                          {
+                            "$": {
+                              "CopyRoleAssignments": "true",
+                              "ClearSubscopes": "true"
+                            },
+                            "pnp:RoleAssignment": [
+                              {
+                                "$": {
+                                  "Principal": "Power Users",
+                                  "RoleDefinition": "Full Control"
+                                }
+                              },
+                              {
+                                "$": {
+                                  "Principal": "Guests",
+                                  "RoleDefinition": "View Only"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "$": {
+                      "Layout": "Custom",
+                      "Overwrite": "true",
+                      "Url": "{site}/SitePages/AnotherWikiPage.aspx"
+                    },
+                    "pnp:Fields": [
+                      {
+                        "pnp:Field": [
+                          {
+                            "_": "\r\n                            \r\n              The Wiki page HTML code here!\r\n              \r\n                        ",
+                            "$": {
+                              "FieldName": "WikiField"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:WebParts": [
+                      {
+                        "pnp:WebPart": [
+                          {
+                            "$": {
+                              "Column": "1",
+                              "Row": "1",
+                              "Title": "Script Editor"
+                            },
+                            "pnp:Contents": [
+                              {
+                                "webParts": [
+                                  {
+                                    "webPart": [
+                                      {
+                                        "$": {
+                                          "xmlns": "http://schemas.microsoft.com/WebPart/v3"
+                                        },
+                                        "metaData": [
+                                          {
+                                            "type": [
+                                              {
+                                                "$": {
+                                                  "name": "Microsoft.SharePoint.WebPartPages.ScriptEditorWebPart, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"
+                                                }
+                                              }
+                                            ],
+                                            "importErrorMessage": [
+                                              "Cannot import this Web Part."
+                                            ]
+                                          }
+                                        ],
+                                        "data": [
+                                          {
+                                            "properties": [
+                                              {
+                                                "property": [
+                                                  {
+                                                    "_": "All",
+                                                    "$": {
+                                                      "name": "ExportMode",
+                                                      "type": "exportmode"
+                                                    }
+                                                  },
+                                                  {
+                                                    "$": {
+                                                      "name": "HelpUrl",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "False",
+                                                    "$": {
+                                                      "name": "Hidden",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "Allows authors to insert HTML snippets or scripts.",
+                                                    "$": {
+                                                      "name": "Description",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "\r\n                                                    \r\n                          <script type=\"text/javascript\">\r\n                          function showAlert(){alert(\"Hello!\")};\r\n                          </script><input type=\"button\" onclick=\"showAlert();\" value=\"Click me\">\r\n                                                ",
+                                                    "$": {
+                                                      "name": "Content",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "$": {
+                                                      "name": "CatalogIconImageUrl",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "Script Editor",
+                                                    "$": {
+                                                      "name": "Title",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "True",
+                                                    "$": {
+                                                      "name": "AllowHide",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "True",
+                                                    "$": {
+                                                      "name": "AllowMinimize",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "True",
+                                                    "$": {
+                                                      "name": "AllowZoneChange",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "$": {
+                                                      "name": "TitleUrl",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "None",
+                                                    "$": {
+                                                      "name": "ChromeType",
+                                                      "type": "chrometype"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "True",
+                                                    "$": {
+                                                      "name": "AllowConnect",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "$": {
+                                                      "name": "Width",
+                                                      "type": "unit"
+                                                    }
+                                                  },
+                                                  {
+                                                    "$": {
+                                                      "name": "Height",
+                                                      "type": "unit"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "Navigate",
+                                                    "$": {
+                                                      "name": "HelpMode",
+                                                      "type": "helpmode"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "True",
+                                                    "$": {
+                                                      "name": "AllowEdit",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "$": {
+                                                      "name": "TitleIconImageUrl",
+                                                      "type": "string"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "NotSet",
+                                                    "$": {
+                                                      "name": "Direction",
+                                                      "type": "direction"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "True",
+                                                    "$": {
+                                                      "name": "AllowClose",
+                                                      "type": "bool"
+                                                    }
+                                                  },
+                                                  {
+                                                    "_": "Normal",
+                                                    "$": {
+                                                      "name": "ChromeState",
+                                                      "type": "chromestate"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:TermGroups": [
+              {
+                "pnp:TermGroup": [
+                  {
+                    "$": {
+                      "ID": "{0E8F395E-FF58-4D45-9FF7-E331AB728BEB}",
+                      "Name": "{parameter:CompanyName} TermSets"
+                    },
+                    "pnp:TermSets": [
+                      {
+                        "pnp:TermSet": [
+                          {
+                            "$": {
+                              "Name": "Projects",
+                              "ID": "{5880B01B-5D6F-4606-A492-3B03A2FB4DD7}",
+                              "Language": "1040"
+                            },
+                            "pnp:Terms": [
+                              {
+                                "pnp:Term": [
+                                  {
+                                    "$": {
+                                      "Name": "IT Projects",
+                                      "ID": "{3D212FC2-F176-4621-AED1-128219666D95}"
+                                    },
+                                    "pnp:CustomProperties": [
+                                      {
+                                        "pnp:Property": [
+                                          {
+                                            "$": {
+                                              "Key": "Property1",
+                                              "Value": "Value1"
+                                            }
+                                          },
+                                          {
+                                            "$": {
+                                              "Key": "Property2",
+                                              "Value": "Value2"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ],
+                                    "pnp:LocalCustomProperties": [
+                                      {
+                                        "pnp:Property": [
+                                          {
+                                            "$": {
+                                              "Key": "LocalProperty1",
+                                              "Value": "Value1"
+                                            }
+                                          },
+                                          {
+                                            "$": {
+                                              "Key": "LocalProperty2",
+                                              "Value": "Value2"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ],
+                                    "pnp:Terms": [
+                                      {
+                                        "pnp:Term": [
+                                          {
+                                            "$": {
+                                              "Name": "Cloud",
+                                              "ID": "{87C55100-8316-4DA0-97FD-FEB5731880F6}"
+                                            },
+                                            "pnp:Labels": [
+                                              {
+                                                "pnp:Label": [
+                                                  {
+                                                    "$": {
+                                                      "Language": "1040",
+                                                      "Value": "Nuvola"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "$": {
+                                              "Name": "New Farm",
+                                              "ID": "{C422BD0D-681D-448F-A41E-C71C473A95CC}",
+                                              "IsDeprecated": "true"
+                                            },
+                                            "pnp:Labels": [
+                                              {
+                                                "pnp:Label": [
+                                                  {
+                                                    "$": {
+                                                      "Language": "1040",
+                                                      "Value": "Nuova Farm"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "$": {
+                                      "Name": "HSE Projects",
+                                      "ID": "{1F1B9EE8-74EA-4D89-B502-FEAA44340385}"
+                                    },
+                                    "pnp:Terms": [
+                                      {
+                                        "pnp:Term": [
+                                          {
+                                            "$": {
+                                              "Name": "Security Assessment",
+                                              "ID": "{3279FE80-95DB-4D35-B235-A9B2F0FB6F9E}"
+                                            },
+                                            "pnp:Labels": [
+                                              {
+                                                "pnp:Label": [
+                                                  {
+                                                    "$": {
+                                                      "Language": "1040",
+                                                      "Value": "Valutazione Sicurezza"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "$": {
+                                              "Name": "Safety Program",
+                                              "ID": "{FBEA36EA-A750-4A97-9667-5D51A6C895AF}"
+                                            },
+                                            "pnp:Labels": [
+                                              {
+                                                "pnp:Label": [
+                                                  {
+                                                    "$": {
+                                                      "Language": "1040",
+                                                      "Value": "Programma Sicurezza"
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:Contributors": [
+                      {
+                        "pnp:User": [
+                          {
+                            "$": {
+                              "Name": "user1@contoso.com"
+                            }
+                          }
+                        ]
+                      }
+                    ],
+                    "pnp:Managers": [
+                      {
+                        "pnp:User": [
+                          {
+                            "$": {
+                              "Name": "user2@contoso.com"
+                            }
+                          },
+                          {
+                            "$": {
+                              "Name": "user3@contoso.com"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:ComposedLook": [
+              {
+                "$": {
+                  "Name": "Custom Look",
+                  "Version": "1",
+                  "BackgroundFile": "{sitecollection}/Resources/Themes/Contoso/contosobg.jpg",
+                  "ColorFile": "{sitecollection}/_catalogs/Theme/15/Custom.spcolor",
+                  "FontFile": "{sitecollection}/_catalogs/Theme/15/Custom.spfont"
+                }
+              }
+            ],
+            "pnp:SearchSettings": [
+              {
+                "pnp:SiteSearchSettings": [
+                  {
+                    "SearchConfigurationSettings": [
+                      {
+                        "$": {
+                          "xmlns:i": "http://www.w3.org/2001/XMLSchema-instance",
+                          "xmlns": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Portability"
+                        },
+                        "SearchQueryConfigurationSettings": [
+                          {
+                            "SearchQueryConfigurationSettings": [
+                              {
+                                "BestBets": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://www.microsoft.com/sharepoint/search/KnownTypes/2008/08"
+                                    }
+                                  }
+                                ],
+                                "DefaultSourceId": [
+                                  "00000000-0000-0000-0000-000000000000"
+                                ],
+                                "DefaultSourceIdSet": [
+                                  "true"
+                                ],
+                                "DeployToParent": [
+                                  "false"
+                                ],
+                                "DisableInheritanceOnImport": [
+                                  "false"
+                                ],
+                                "QueryRuleGroups": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://www.microsoft.com/sharepoint/search/KnownTypes/2008/08"
+                                    }
+                                  }
+                                ],
+                                "QueryRules": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://www.microsoft.com/sharepoint/search/KnownTypes/2008/08"
+                                    }
+                                  }
+                                ],
+                                "ResultTypes": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration"
+                                    }
+                                  }
+                                ],
+                                "Sources": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration.Query"
+                                    }
+                                  }
+                                ],
+                                "UserSegments": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://www.microsoft.com/sharepoint/search/KnownTypes/2008/08"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ],
+                        "SearchRankingModelConfigurationSettings": [
+                          {
+                            "RankingModels": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "SearchSchemaConfigurationSettings": [
+                          {
+                            "Aliases": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration"
+                                },
+                                "d3p1:LastItemName": [
+                                  {
+                                    "$": {
+                                      "i:nil": "true"
+                                    }
+                                  }
+                                ],
+                                "d3p1:dictionary": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            "CategoriesAndCrawledProperties": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                }
+                              }
+                            ],
+                            "CrawledProperties": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration",
+                                  "i:nil": "true"
+                                }
+                              }
+                            ],
+                            "ManagedProperties": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration"
+                                },
+                                "d3p1:LastItemName": [
+                                  {
+                                    "$": {
+                                      "i:nil": "true"
+                                    }
+                                  }
+                                ],
+                                "d3p1:dictionary": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                    }
+                                  }
+                                ],
+                                "d3p1:TotalCount": [
+                                  "0"
+                                ]
+                              }
+                            ],
+                            "Mappings": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration"
+                                },
+                                "d3p1:LastItemName": [
+                                  {
+                                    "$": {
+                                      "i:nil": "true"
+                                    }
+                                  }
+                                ],
+                                "d3p1:dictionary": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                    }
+                                  }
+                                ]
+                              }
+                            ],
+                            "Overrides": [
+                              {
+                                "$": {
+                                  "xmlns:d3p1": "http://schemas.datacontract.org/2004/07/Microsoft.Office.Server.Search.Administration"
+                                },
+                                "d3p1:LastItemName": [
+                                  {
+                                    "$": {
+                                      "i:nil": "true"
+                                    }
+                                  }
+                                ],
+                                "d3p1:dictionary": [
+                                  {
+                                    "$": {
+                                      "xmlns:d4p1": "http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:Publishing": [
+              {
+                "$": {
+                  "AutoCheckRequirements": "MakeCompliant"
+                },
+                "pnp:DesignPackage": [
+                  {
+                    "$": {
+                      "DesignPackagePath": "CustomDesign.wsp",
+                      "MajorVersion": "1",
+                      "MinorVersion": "0",
+                      "PackageGuid": "{A3349210-5283-44A5-A23F-00F489EB690B}",
+                      "PackageName": "Custom Design"
+                    }
+                  }
+                ],
+                "pnp:AvailableWebTemplates": [
+                  {
+                    "pnp:WebTemplate": [
+                      {
+                        "$": {
+                          "LanguageCode": "1033",
+                          "TemplateName": "STS#0"
+                        }
+                      },
+                      {
+                        "$": {
+                          "TemplateName": "BLOG#0"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:PageLayouts": [
+                  {
+                    "$": {
+                      "Default": "SimplePage.aspx"
+                    },
+                    "pnp:PageLayout": [
+                      {
+                        "$": {
+                          "Path": "News.aspx"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Path": "SimplePage.aspx"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Path": "Product.aspx"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:ImageRenditions": [
+                  {
+                    "pnp:ImageRendition": [
+                      {
+                        "$": {
+                          "Width": "100",
+                          "Height": "100",
+                          "Name": "SmallSquare"
+                        }
+                      },
+                      {
+                        "$": {
+                          "Width": "500",
+                          "Height": "200",
+                          "Name": "SmallRectangle"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:ApplicationLifecycleManagement": [
+              {
+                "pnp:AppCatalog": [
+                  {
+                    "pnp:Package": [
+                      {
+                        "$": {
+                          "Src": "solution\\spfx-discuss-now.sppkg",
+                          "Action": "UploadAndPublish",
+                          "SkipFeatureDeployment": "true"
+                        }
+                      },
+                      {
+                        "$": {
+                          "PackageId": "d0816f0a-fda4-4a98-8e61-1bbe1f2b5b27",
+                          "Action": "Publish"
+                        }
+                      },
+                      {
+                        "$": {
+                          "PackageId": "9672a07b-c111-4a12-bb5b-8d43c2ddd256",
+                          "Action": "Remove"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "pnp:Apps": [
+                  {
+                    "pnp:App": [
+                      {
+                        "$": {
+                          "AppId": "d0816f0a-fda4-4a98-8e61-1bbe1f2b5b27",
+                          "Action": "Install",
+                          "SyncMode": "Synchronously"
+                        }
+                      },
+                      {
+                        "$": {
+                          "AppId": "{AppPackageId:spfx-discuss-now.sppkg}",
+                          "Action": "Update",
+                          "SyncMode": "Asynchronously"
+                        }
+                      },
+                      {
+                        "$": {
+                          "AppId": "9672a07b-c111-4a12-bb5b-8d43c2ddd256",
+                          "Action": "Uninstall"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:Providers": [
+              {
+                "pnp:Provider": [
+                  {
+                    "$": {
+                      "HandlerType": "OfficeDev.PnP.Provisioning.Providers.FakeProvider, OfficeDev.PnP.Provisioning.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+                      "Enabled": "true"
+                    },
+                    "pnp:Configuration": [
+                      {
+                        "MyProviderConfiguration": [
+                          {
+                            "$": {
+                              "id": "SampleConfig",
+                              "xmlns": "http://schemas.somecompany.com/MyProviderConfiguration"
+                            },
+                            "ChildNode": [
+                              {
+                                "_": "TextContent",
+                                "$": {
+                                  "Attribute": "value"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "$": {
+                      "HandlerType": "MySampleProviderNode.js",
+                      "Enabled": "true"
+                    },
+                    "pnp:Configuration": [
+                      {
+                        "AnotherConfiguration": [
+                          {
+                            "$": {
+                              "id": "AnotherConfig",
+                              "xmlns": "http://schemas.othercompany.com/AnotherConfiguration"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "pnp:SiteWebhooks": [
+              {
+                "pnp:Webhook": [
+                  {
+                    "$": {
+                      "ServerNotificationUrl": "http://myapp.azurewebsites.net/WebHookListener",
+                      "ExpiresInDays": "120",
+                      "SiteWebhookType": "WebCreated"
+                    }
+                  },
+                  {
+                    "$": {
+                      "ServerNotificationUrl": "http://myapp.azurewebsites.net/WebHookListener",
+                      "ExpiresInDays": "120",
+                      "SiteWebhookType": "WebDeleted"
+                    }
+                  }
+                ]
+              }
+            ],
+            "pnp:ClientSidePages": [
+              {
+                "pnp:ClientSidePage": [
+                  {
+                    "$": {
+                      "PageName": "SamplePage",
+                      "PromoteAsNewsArticle": "true",
+                      "Overwrite": "true",
+                      "Publish": "true",
+                      "Layout": "Article",
+                      "EnableComments": "true",
+                      "Title": "Client Side Page Title"
+                    },
+                    "pnp:Header": [
+                      {
+                        "$": {
+                          "Type": "Custom",
+                          "ServerRelativeImageUrl": "./site%20assets/picture.png",
+                          "TranslateX": "10.56",
+                          "TranslateY": "15.12345"
+                        }
+                      }
+                    ],
+                    "pnp:Sections": [
+                      {
+                        "pnp:Section": [
+                          {
+                            "$": {
+                              "Order": "1",
+                              "Type": "OneColumn"
+                            },
+                            "pnp:Controls": [
+                              {
+                                "pnp:CanvasControl": [
+                                  {
+                                    "$": {
+                                      "WebPartType": "Image",
+                                      "CustomWebPartName": "...",
+                                      "JsonControlData": "{}",
+                                      "ControlId": "0eaba53f-55d8-44b5-9f7c-61301c7f1e0e",
+                                      "Order": "1"
+                                    },
+                                    "pnp:CanvasControlProperties": [
+                                      {
+                                        "pnp:CanvasControlProperty": [
+                                          {
+                                            "$": {
+                                              "Key": "",
+                                              "Value": "{token}"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pnp:Sequence": [
+      {
+        "$": {
+          "ID": "SAMPLE-SEQUENCE",
+          "SequenceType": "Synchronous"
+        },
+        "pnp:SiteCollection": [
+          {
+            "$": {
+              "Language": "1040",
+              "SiteTemplate": "STS#0",
+              "PrimarySiteCollectionAdmin": "john@contoso.com",
+              "MembersCanShare": "true",
+              "TimeZone": "1",
+              "Title": "{parameter:CompanyName} Intranet",
+              "Url": "https://{O365TenantName}.sharepoint.com/sites/Intranet"
+            },
+            "pnp:Templates": [
+              {
+                "pnp:ProvisioningTemplateReference": [
+                  {
+                    "$": {
+                      "ID": "SPECIALTEAM"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "pnp:Site": [
+          {
+            "$": {
+              "Language": "1040",
+              "SiteTemplate": "STS#0",
+              "QuickLaunchEnabled": "true",
+              "TimeZone": "1",
+              "Title": "{parameter:CompanyName} Intranet Workflows",
+              "Url": "Workflows",
+              "UseSamePermissionsAsParentSite": "true"
+            },
+            "pnp:Templates": [
+              {
+                "pnp:ProvisioningTemplateReference": [
+                  {
+                    "$": {
+                      "ID": "WORKFLOWSITE"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "pnp:TermStore": [
+          {
+            "$": {
+              "Scope": "Current"
+            },
+            "pnp:TermGroup": [
+              {
+                "$": {
+                  "ID": "{0E8F395E-FF58-4D45-9FF7-E331AB728BEB}",
+                  "Name": "{parameter:CompanyName} TermSets"
+                },
+                "pnp:TermSets": [
+                  {
+                    "pnp:TermSet": [
+                      {
+                        "$": {
+                          "Name": "Projects",
+                          "ID": "{5880B01B-5D6F-4606-A492-3B03A2FB4DD7}"
+                        },
+                        "pnp:Terms": [
+                          {
+                            "pnp:Term": [
+                              {
+                                "$": {
+                                  "Name": "IT Projects",
+                                  "ID": "{3D212FC2-F176-4621-AED1-128219666D95}"
+                                },
+                                "pnp:CustomProperties": [
+                                  {
+                                    "pnp:Property": [
+                                      {
+                                        "$": {
+                                          "Key": "Property1",
+                                          "Value": "Value1"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Key": "Property2",
+                                          "Value": "Value2"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "pnp:LocalCustomProperties": [
+                                  {
+                                    "pnp:Property": [
+                                      {
+                                        "$": {
+                                          "Key": "LocalProperty1",
+                                          "Value": "Value1"
+                                        }
+                                      },
+                                      {
+                                        "$": {
+                                          "Key": "LocalProperty2",
+                                          "Value": "Value2"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "pnp:Terms": [
+                                  {
+                                    "pnp:Term": [
+                                      {
+                                        "$": {
+                                          "Name": "Cloud",
+                                          "ID": "{87C55100-8316-4DA0-97FD-FEB5731880F6}"
+                                        },
+                                        "pnp:Labels": [
+                                          {
+                                            "pnp:Label": [
+                                              {
+                                                "$": {
+                                                  "Language": "1040",
+                                                  "Value": "Nuvola"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "$": {
+                                          "Name": "New Farm",
+                                          "ID": "{C422BD0D-681D-448F-A41E-C71C473A95CC}"
+                                        },
+                                        "pnp:Labels": [
+                                          {
+                                            "pnp:Label": [
+                                              {
+                                                "$": {
+                                                  "Language": "1040",
+                                                  "Value": "Nuova Farm"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "$": {
+                                  "Name": "HSE Projects",
+                                  "ID": "{1F1B9EE8-74EA-4D89-B502-FEAA44340385}"
+                                },
+                                "pnp:Terms": [
+                                  {
+                                    "pnp:Term": [
+                                      {
+                                        "$": {
+                                          "Name": "Security Assessment",
+                                          "ID": "{3279FE80-95DB-4D35-B235-A9B2F0FB6F9E}"
+                                        },
+                                        "pnp:Labels": [
+                                          {
+                                            "pnp:Label": [
+                                              {
+                                                "$": {
+                                                  "Language": "1040",
+                                                  "Value": "Valutazione Sicurezza"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "$": {
+                                          "Name": "Safety Program",
+                                          "ID": "{FBEA36EA-A750-4A97-9667-5D51A6C895AF}"
+                                        },
+                                        "pnp:Labels": [
+                                          {
+                                            "pnp:Label": [
+                                              {
+                                                "$": {
+                                                  "Language": "1040",
+                                                  "Value": "Programma Sicurezza"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "pnp:Extensions": [
+          {
+            "my:CustomExtension": [
+              {
+                "$": {
+                  "xmlns:my": "http://tempuri"
+                }
+              }
+            ],
+            "my2:AnotherExtension": [
+              {
+                "$": {
+                  "xmlns:my2": "http://tempuri2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "pnp:ImportSequence": [
+      {
+        "$": {
+          "File": "AnotherSequence.xml"
+        }
+      }
+    ]
+  }
+}
